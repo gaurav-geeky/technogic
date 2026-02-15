@@ -15,7 +15,7 @@ const ProductCard = ({ product, seeProduct }) => {
             />
 
             {/* Name */}
-            <div className="flex items-center  justify-around">
+            <div className="flex items-center justify-around">
                 <h3 className="mt-3 font-semibold text-lg">
                     {product.name}
                 </h3>

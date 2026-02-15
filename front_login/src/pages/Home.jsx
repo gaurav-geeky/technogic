@@ -55,7 +55,7 @@ const Home = () => {
       {/* Slider BELOW heading */}
       <div className="flex justify-center">
 
-        <div className="h-[30vh] md:h-[40vh]  w-[80%] md:w-[70%] overflow-hidden rounded">
+        <div className="h-[25vh] sm:h-[30vh] md:h-[35vh] lg:h-[40vh] w-[92%] sm:w-[85%] md:w-[80%] lg:w-[70%] overflow-hidden rounded">
           <img
             src={images[current]}
             alt="banner"
@@ -65,13 +65,13 @@ const Home = () => {
       </div>
 
       {/* Products Section */}
-      <div className="w-[85%] md:w-[75%] mx-auto my-10">
+      <div className="w-[92%] sm:w-[85%] md:w-[80%] lg:w-[75%] mx-auto my-10">
 
         <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6 text-center">
           Our Products
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
 
           {productarray.map((product) => (
             <ProductCard
