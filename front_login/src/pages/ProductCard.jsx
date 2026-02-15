@@ -11,19 +11,19 @@ const ProductCard = ({ product, seeProduct }) => {
             <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-40 object-cover rounded"
+                className="w-full h-40 object-cover rounded "
             />
 
             {/* Name */}
-            <div className="flex items-center justify-around">
-                <h3 className="mt-3 font-semibold text-lg">
+            <div className="flex items-center justify-around ">
+                <h3 className="mt-3 font-semibold text-lg ">
                     {product.name}
                 </h3>
-                <p> &#8377; {product.price} </p>
+                <div className=" mt-3"> &#8377; {product.price} </div>
             </div>
 
             {/* Description */}
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-sm text-gray-600 mt-2 line-clamp-2 ">
                 {product.description}
             </p>
         </div>

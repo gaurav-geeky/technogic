@@ -45,6 +45,8 @@ const Login = () => {
 
             <div className="bg-white w-full max-w-md p-6 sm:p-8 rounded-2xl shadow-lg">
 
+                <img style={{ height: "40px" }} src="/logo.png" alt="logo" />
+
                 <h2 className="text-xl sm:text-2xl font-bold text-center text-blue-600 mb-6">
                     Login
                 </h2>

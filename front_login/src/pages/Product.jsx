@@ -47,7 +47,7 @@ const Product = () => {
         {/* Text */}
         <div className='w-full md:w-1/2 flex flex-col justify-center'>
 
-          <div className="text-sm text-gray-500">
+          <div className="text-md text-gray-700">
             ₹ {myproduct.price}
           </div>
 

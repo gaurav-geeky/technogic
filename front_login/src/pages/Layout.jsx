@@ -36,7 +36,15 @@ const Layout = () => {
                     </div>
 
                     {/* Menu Links */}
-                    <div className="flex flex-col gap-5 mt-6 px-4">
+                    <div className="flex flex-col  gap-5 mt-6 px-4">
+                        {/* className="h-8 w-auto mx-auto" */}
+
+                        <img
+                            src="/logo.png"
+                            alt="logo"
+                            className="h-6 sm:h-5 lg:h-7 object-contain m-auto w-auto"
+                        />
+
                         <Link to="home"
                             className=" text-center py-2 px-4 rounded-md bg-gray-200 text-gray-800 font-medium hover:bg-blue-100 hover:text-blue-600 transition"
                         >
@@ -74,15 +82,25 @@ const Layout = () => {
                                 ☰
                             </button>
 
-                            <h1 className="text-xs sm:text-sm md:text-xl lg:text-2xl font-bold text-blue-700 truncate">
-                                Empowering Businesses Through Technology
+                            <h1 className="text-xs sm:text-sm md:text-xl lg:text-2xl font-bold text-blue-700 truncate flex items-center gap-2">
+
+                                <span>Empowering Businesses</span>
+
+                                <img
+                                    src="/logo.png"
+                                    alt="logo"
+                                    className="h-4 sm:h-5 md:h-6 lg:h-7 w-auto object-contain"
+                                />
+
                             </h1>
+
 
                         </div>
 
                         {/* Right Section */}
                         <div className="text-[10px] sm:text-xs md:text-sm lg:text-base font-medium text-gray-600 whitespace-nowrap">
-                            Welcome to Technogiq
+                            Welcome to
+                            <span className="ml-1 text-pink-600 font-bold">Technogiq</span>
                         </div>
 
                     </header>
