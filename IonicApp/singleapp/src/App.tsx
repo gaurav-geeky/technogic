@@ -9,13 +9,16 @@ import {
   IonTabs,
   setupIonicReact
 } from '@ionic/react';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { ellipse, square, triangle, person, home, heart } from 'ionicons/icons';
+
 
 
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import UserCard from './pages/UserCard';
 UserCard
+import Dashboard from './pages/Dashboard';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -65,18 +68,28 @@ const App: React.FC = () => (
             <UserCard name="gaurav" email="gaurav@gamil.com" />
           </Route>
 
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+
         </IonRouterOutlet>
 
 
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom"> 
+          
           <IonTabButton tab="tab1" href="/home">
-            <IonIcon aria-hidden="true" icon={triangle} />
+            <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="tab2" href="/usercard">
-            <IonIcon aria-hidden="true" icon={ellipse} />
+            <IonIcon aria-hidden="true" icon={heart} />
             <IonLabel>UserCard</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="dashboard" href="/dashboard">
+            <IonIcon aria-hidden="true" icon={square} />
+            <IonLabel>Dashboard</IonLabel>
           </IonTabButton>
 
         </IonTabBar>

@@ -1,0 +1,7 @@
+{
+  "name": "wap",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

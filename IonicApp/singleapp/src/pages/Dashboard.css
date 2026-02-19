@@ -1,0 +1,120 @@
+.dashboard-content {
+  --background: #f4f6f9;
+}
+
+/* =======================
+   PROFILE SECTION
+======================= */
+
+.profile-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* avatar size */
+.avatar {
+  margin: 0 auto 10px;
+  width: 90px;
+  height: 90px;
+}
+
+/* welcome text */
+.profile-section h2 {
+  margin: 8px 0 4px;
+  font-weight: 600;
+}
+
+.profile-section p {
+  color: #777;
+  margin: 0;
+}
+
+/* =======================
+   CARD STYLING
+======================= */
+
+.info-card {
+  margin: 25px 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* =======================
+   ACTION BUTTONS
+======================= */
+
+.action-buttons {
+  margin: 20px 16px;
+}
+
+/* button styling */
+.action-buttons ion-button {
+  margin-top: 12px;
+  --border-radius: 12px;
+
+  /* ⭐ Responsive width control */
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =======================
+   CONTENT BLOCK CENTERING
+======================= */
+
+.center-content {
+  max-width: 420px;   /* ⭐ prevents stretching on tablets */
+  margin: 20px auto;  /* ⭐ centers on large screens */
+  text-align: center;
+}
+
+/* =======================
+   📱 SMALL PHONES (<360px)
+======================= */
+@media (max-width: 360px) {
+  .avatar {
+    width: 70px;   /* ⭐ smaller avatar */
+    height: 70px;
+  }
+
+  .profile-section h2 {
+    font-size: 18px;  /* ⭐ prevent overflow */
+  }
+}
+
+/* =======================
+   📱 LARGE PHONES & TABLETS
+======================= */
+@media (min-width: 600px) {
+
+  .dashboard-content {
+    max-width: 600px;     /* ⭐ center whole layout */
+    margin: auto;
+  }
+
+  .info-card {
+    margin: 25px auto;    /* ⭐ center card */
+    max-width: 500px;
+  }
+
+  .action-buttons {
+    max-width: 500px;     /* ⭐ prevent wide stretch */
+    margin: 20px auto;
+  }
+}
+
+/* =======================
+   💻 DESKTOP / WEB VIEW
+======================= */
+@media (min-width: 900px) {
+
+  .dashboard-content {
+    max-width: 720px;   /* ⭐ professional width */
+  }
+
+  .avatar {
+    width: 110px;   /* ⭐ scale avatar slightly */
+    height: 110px;
+  }
+
+}
