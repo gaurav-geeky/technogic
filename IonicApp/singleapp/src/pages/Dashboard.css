@@ -71,7 +71,7 @@
 /* =======================
    📱 SMALL PHONES (<360px)
 ======================= */
-@media (max-width: 360px) {
+@media (max-width: 360px) { 
   .avatar {
     width: 70px;   /* ⭐ smaller avatar */
     height: 70px;
@@ -106,6 +106,7 @@
 /* =======================
    💻 DESKTOP / WEB VIEW
 ======================= */
+
 @media (min-width: 900px) {
 
   .dashboard-content {
