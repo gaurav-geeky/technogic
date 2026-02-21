@@ -13,24 +13,11 @@ const Header = () => {
     });
     const dropdownRef = useRef(null);
 
-    // close when clicking outside
-    useEffect(() => {
-        function handleClickOutside(e) {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-                setOpen(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-
     const languages = [
         { name: "Nederlands", flag: "https://flagcdn.com/w20/nl.png" },
         { name: "Français", flag: "https://flagcdn.com/w20/fr.png" },
         { name: "English", flag: "https://flagcdn.com/w20/gb.png" }
     ];
-
 
     const [catOpen, setCatOpen] = useState(false);
     const [category, setCategory] = useState("ALL");
@@ -38,16 +25,29 @@ const Header = () => {
 
     useEffect(() => {
         function handleClickOutside(e) {
+
+            // close language dropdown
             if (
-                dropdownRef.current && !dropdownRef.current.contains(e.target) &&
-                catRef.current && !catRef.current.contains(e.target)
+                dropdownRef.current &&
+                !dropdownRef.current.contains(e.target)
             ) {
                 setOpen(false);
+            }
+
+            // close category dropdown
+            if (
+                catRef.current &&
+                !catRef.current.contains(e.target)
+            ) {
                 setCatOpen(false);
             }
+
         }
+
         document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+
+        return () =>
+            document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
 
@@ -72,7 +72,7 @@ const Header = () => {
 
     return (
         <>
-            <article className='border border-blue-600 '>
+            <article className=' w-[85%] m-auto font-[Merriweather] '>
                 <section className=''>
 
                     {/* LANGUAGE DROPDOWN  1st */}
@@ -98,7 +98,7 @@ const Header = () => {
                                     <div className="absolute right-5 top-full -mt-1 w-3 h-3 bg-[#86133a] rotate-45 z-50"></div>
 
                                     {/* DROPDOWN */}
-                                    <div className="absolute right-0 top-full w-44 bg-[#86133a] text-white rounded shadow-lg overflow-hidden z-50">
+                                    <div className="absolute right-0 top-full w-44 bg-[#86133a] text-white rounded shadow-lg overflow-hidden z-60">
                                         {languages.map((lang) => (
                                             <div
                                                 key={lang.name}
@@ -149,14 +149,14 @@ const Header = () => {
                                         <div className="absolute  top-full left-0 w-48 bg-[#86133a] text-white shadow-lg z-60 ">
 
                                             {/* ✅ scrollable list */}
-                                            <ul className="max-h-[350px] overflow-y-auto">
+                                            <ul className="max-h-[350px] overflow-y-auto text-[12px]  ">
                                                 {categories.map((item) => (
                                                     <li
                                                         key={item}
                                                         onClick={() => {
                                                             setCategory(item);
                                                         }}
-                                                        className="px-4 py-2 hover:bg-[#d89aaa] cursor-pointer"
+                                                        className="px-4 py-3 hover:bg-[#d89aaa] cursor-pointer"
                                                     >
                                                         {item}
                                                     </li>
@@ -182,8 +182,8 @@ const Header = () => {
                         {/* 3rd */}
                         <div className='flex items-center gap-6  border px-1'>
                             <div className='text-[35px] '> <PiShoppingCart /> </div>
-                            <span className='text-[#86133a] text-[18px] font-semibold hover:text-[#e74a7e]' >REGISTRATION</span>
-                            <span className='text-rose-500 text-[18px] font-semibold hover:text-[#f9b4ca]  '>SAVE</span>
+                            <span className='text-[#86133a] text-[18px] font-semibold hover:text-[#e74a7e]' >SIGN IN</span>
+                            <span className='text-rose-500 text-[18px] font-semibold hover:text-[#f9b4ca]  '>REGISTER</span>
                         </div>
                     </div>
 
@@ -191,21 +191,22 @@ const Header = () => {
 
                 </section>
 
-                {/* Navigation options 3rd */}
-                <nav className="sticky top-0 z-50 border-amber-600 border" >
-                    <div className='flex items-center justify-between text-[22px] border w-5xl m-auto mt-1 mb-1 '>
-                        <a href="">Home </a>
-                        <a href="" className='text-rose-500'>Shop</a>
-                        <a href="">How to order?</a>
-                        <a href="">Our quality meat</a>
-                        <a href="">Mission & Vision</a>
-                        <a href="">News</a>
-                        <a href="">Help</a>
-                        <a href="">Contact</a>
-                    </div>
-                </nav>
-
             </article>
+
+            {/* Navigation options 3rd */}
+            <nav className="sticky top-0 z-50 py-2 bg-white font-[Merriweather]" >
+                <div className='flex items-center justify-between text-[22px] border w-5xl m-auto mt-1 mb-1 text-gray-800 '>
+                    <a href="">Home </a>
+                    <a href="" className='text-rose-500'>Shop</a>
+                    <a href="">How to order?</a>
+                    <a href="">Our quality meat</a>
+                    <a href="">Mission & Vision</a>
+                    <a href="">News</a>
+                    <a href="">Help</a>
+                    <a href="">Contact</a>
+                </div>
+            </nav>
+
         </>
     )
 }
